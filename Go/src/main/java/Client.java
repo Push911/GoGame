@@ -1,13 +1,16 @@
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.net.Socket;
 
 public class Client extends Server implements MouseListener
 {
+
     public void MouseComponent()
     {
         addMouseListener(this);
     }
+
     Point point;
     int x, y;
 
@@ -42,8 +45,28 @@ public class Client extends Server implements MouseListener
 
     }
 
+    public void socket()
+    {
+        try
+        {
+            Socket server = new Socket("localhost", 5000);
+            PrintWriter out = new PrintWriter(server.getOutputStream(), true);
+            BufferedReader in = new BufferedReader(new InputStreamReader(server.getInputStream()));
+        }
+        catch(UnknownHostException e)
+        {
+            System.out.println("Unknown host: localhost");
+            System.exit(1);
+        }
+        catch(IOException e)
+        {
+            System.out.println("No I/O");
+            System.exit(1);
+        }
+    }
+
     public static void main(String[] args)
     {
-        new Gui();
+        new Client();
     }
 }
