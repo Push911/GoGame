@@ -1,27 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="191a17c1-2c23-4970-8ceb-e1a860aea2a0" name="Default Changelist" comment="Added Client, Server interface.&#10;Added Mouse implementation.">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/GoGame-master-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/GoGame-master.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GoGame-master.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Go/Go.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Go/src/main/java/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Go/src/main/java/Gui.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Go/src/main/java/Server.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Go/target/Go-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Go/target/classes/Client$GoGameMain.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Go/target/classes/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Go/target/classes/monteCarloMethod.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Go/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Go/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Go/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+    <list default="true" id="191a17c1-2c23-4970-8ceb-e1a860aea2a0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +12,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="master" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_USER" value="Push911" />
+    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_NAME" value="GoGame" />
   </component>
   <component name="GithubPullRequestsUISettings">
     <option name="hiddenUrls">
@@ -60,10 +46,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -88,12 +74,31 @@
       <option name="presentableId" value="Default" />
       <updated>1577903834425</updated>
       <workItem from="1577903835514" duration="2276000" />
-      <workItem from="1578086352328" duration="1856000" />
+      <workItem from="1578086352328" duration="2272000" />
     </task>
+    <task id="LOCAL-00001" summary="Added Client, Server interface.&#10;Added Mouse implementation.">
+      <created>1578088328355</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1578088328355</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Client, Server interface.&#10;Added Mouse implementation." />
@@ -104,6 +109,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="588" y="215" width="800" height="684" key="#Notifications/67.27.1853.1053@67.27.1853.1053" timestamp="1578087465381" />
+    <state x="588" y="215" width="800" height="684" key="#Project_Structure" timestamp="1578088446112">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="588" y="215" width="800" height="684" key="#Project_Structure/67.27.1853.1053@67.27.1853.1053" timestamp="1578088446112" />
     <state x="596" y="223" width="784" height="668" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1578087743410">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -116,14 +125,14 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="676" y="281" width="624" height="551" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1578086358633" />
-    <state x="558" y="152" width="860" height="810" key="CommitChangelistDialog2" timestamp="1578087292541">
+    <state x="558" y="152" width="860" height="810" key="CommitChangelistDialog2" timestamp="1578088328280">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="558" y="152" width="860" height="810" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1578087292541" />
-    <state x="242" y="121" width="1482" height="879" key="DiffContextDialog" timestamp="1578087291358">
+    <state x="558" y="152" width="860" height="810" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1578088328280" />
+    <state x="242" y="121" width="1482" height="879" key="DiffContextDialog" timestamp="1578088419043">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="242" y="121" width="1482" height="879" key="DiffContextDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1578087291358" />
+    <state x="242" y="121" width="1482" height="879" key="DiffContextDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1578088419043" />
     <state x="765" y="297" width="447" height="520" key="FileChooserDialogImpl" timestamp="1578087607504">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -168,10 +177,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="758" y="270" width="449" height="581" key="RollbackChangesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1578087288535" />
-    <state x="482" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1578087389301">
+    <state x="482" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1578088625745">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="482" y="188" width="1022" height="737" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1578087389301" />
+    <state x="482" y="188" width="1022" height="737" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1578088625745" />
     <state x="167" y="127" width="1653" height="853" key="ShowDiffWithBranchDialog" timestamp="1578087389686">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
