@@ -1,3 +1,11 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
 public class Server extends Gui
 {
     ServerSocket server = null;
@@ -29,14 +37,11 @@ public class Server extends Gui
             System.out.println("No I/O,please open client");
             System.exit(1);
         }
-        while(true)
-        {
-            //
-        }
+
     }
     public static void main(String[] args)
     {
         new Server();
     }
 }
-}
+

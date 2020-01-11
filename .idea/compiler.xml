@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="GoGame-master" />
+        <module name="Go" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Go" target="1.6" />
       <module name="GoGame-master" target="1.5" />
     </bytecodeTargetLevel>
   </component>
