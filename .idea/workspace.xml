@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="191a17c1-2c23-4970-8ceb-e1a860aea2a0" name="Default Changelist" comment="Added Client, Server interface.&#10;Added Mouse implementation.">
-      <change afterPath="$PROJECT_DIR$/Go/Go.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="191a17c1-2c23-4970-8ceb-e1a860aea2a0" name="Default Changelist" comment="Added server folder">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Go/src/main/java/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/Go/Server/src/main/java/Gui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Go/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/Go/Server/src/main/java/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Go/Server/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/Go/Server/src/main/java/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578088328355</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added server folder">
+      <created>1578752144544</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1578752144544</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,7 +131,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Client, Server interface.&#10;Added Mouse implementation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Client, Server interface.&#10;Added Mouse implementation." />
+    <MESSAGE value="Added server folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added server folder" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="215" width="800" height="684" key="#Notifications" timestamp="1578087465381">
@@ -153,10 +156,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="676" y="281" width="624" height="551" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1578086358633" />
-    <state x="407" y="4" width="860" height="810" key="CommitChangelistDialog2" timestamp="1578752049377">
+    <state x="407" y="4" width="860" height="810" key="CommitChangelistDialog2" timestamp="1578752216306">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="407" y="4" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1578752049377" />
+    <state x="407" y="4" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1578752216306" />
     <state x="558" y="152" width="860" height="810" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1578088328280" />
     <state x="242" y="121" width="1482" height="879" key="DiffContextDialog" timestamp="1578088419043">
       <screen x="67" y="27" width="1853" height="1053" />
