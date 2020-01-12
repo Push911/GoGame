@@ -15,4 +15,12 @@ public class ClientMessagesTranslator {
 
     public void processIncomingMessage(String message) {
     }
+
+    public void sendInvitation(String player) {
+
+    }
+
+    public void sendRefusal() {
+
+    }
 }
