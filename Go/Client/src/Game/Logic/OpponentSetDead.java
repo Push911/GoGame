@@ -1,6 +1,6 @@
-package Client.Game.Logic;
+package Game.Logic;
 
-import Client.Game.GameManager;
+import Game.GameManager;
 
 import java.awt.Point;
 
@@ -17,7 +17,7 @@ public class OpponentSetDead implements GameLogic
 	public void nextTurn() 
 	{
 		manager.setLogic(new SetDead(manager));
-		manager.getControler().getOptionsPanel().activateTeritoriesBox(false);
+		manager.getController().getOptionsPanel().activateTerritoriesBox(false);
 	}
 
 	@Override

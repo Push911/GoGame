@@ -1,6 +1,6 @@
-package Client.Game.Logic;
+package Game.Logic;
 
-import Client.Game.GameManager;
+import Game.GameManager;
 
 import java.awt.Point;
 
@@ -18,14 +18,14 @@ public class SetTerritory implements GameLogic
 	@Override
 	public void makeMove(int x, int y) 
 	{
-		manager.getDrawingManager().mark(x, y, manager.getDrawingManager().drawingMode);
+		manager.getDrawingManager().mark(x, y, manager.getDrawingManager().drawStates);
 		last = new Point(x,y);
 	}
 	
 	@Override
 	public void remove(int x, int y) 
 	{
-		manager.getDrawingManager().unmark(x, y, manager.getDrawingManager().drawingMode);
+		manager.getDrawingManager().unmark(x, y, manager.getDrawingManager().drawStates);
 		last = new Point(x,y);
 	}
 
@@ -36,11 +36,11 @@ public class SetTerritory implements GameLogic
 		{
 			if (isAdding)
 			{
-				manager.getDrawingManager().markGroup(last, coords, manager.getDrawingManager().drawingMode);
+				manager.getDrawingManager().markGroup(last, coords, manager.getDrawingManager().drawStates);
 			}
 			else
 			{
-				manager.getDrawingManager().unmarkGroup(last, coords, manager.getDrawingManager().drawingMode);
+				manager.getDrawingManager().unmarkGroup(last, coords, manager.getDrawingManager().drawStates);
 			}
 		}
 		last = null;
@@ -55,7 +55,7 @@ public class SetTerritory implements GameLogic
 	@Override
 	public void nextTurn() 
 	{ 
-		manager.getControler().getOptionsPanel().disactivateTeritoriesBox(false);
+		manager.getController().getOptionsPanel().deactivateTerritoriesBox(false);
 		manager.setLogic(new OpponentSetTerritory(manager));
 	}
 

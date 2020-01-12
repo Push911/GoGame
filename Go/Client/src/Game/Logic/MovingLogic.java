@@ -1,6 +1,6 @@
-package Client.Game.Logic;
+package Game.Logic;
 
-import Client.Game.GameManager;
+import Game.GameManager;
 
 import java.awt.Point;
 
@@ -42,7 +42,7 @@ public class MovingLogic implements GameLogic
     public void nextTurn() 
     { 
     	manager.setLogic(new OpponentMove(manager));
-    	manager.getControler().getOptionsPanel().disactivateButtons(false);
+    	manager.getController().getOptionsPanel().deactivateButtons(false);
     }
 
 	@Override

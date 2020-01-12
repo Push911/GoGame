@@ -1,7 +1,7 @@
-package Client.Game.Logic;
+package Game.Logic;
 
-import Client.Game.GameManager;
-import Client.Gui.DrawingMode;
+import Game.GameManager;
+import Gui.DrawStates;
 
 import java.awt.Point;
 
@@ -19,14 +19,14 @@ public class SetDead implements GameLogic
 	@Override
 	public void makeMove(int x, int y) 
 	{
-		manager.getDrawingManager().mark(x, y, DrawingMode.DEAD);
+		manager.getDrawingManager().mark(x, y, DrawStates.DeadStone);
 		last = new Point(x,y);
 	}
 	
 	@Override
 	public void remove(int x, int y) 
 	{
-		manager.getDrawingManager().unmark(x, y, DrawingMode.DEAD);
+		manager.getDrawingManager().unmark(x, y, DrawStates.DeadStone);
 		last = new Point(x,y);
 	}
 
@@ -37,11 +37,11 @@ public class SetDead implements GameLogic
 		{
 			if (isAdding)
 			{
-				manager.getDrawingManager().markGroup(last, coords, DrawingMode.DEAD);
+				manager.getDrawingManager().markGroup(last, coords, DrawStates.DeadStone);
 			}
 			else
 			{
-				manager.getDrawingManager().unmarkGroup(last, coords, DrawingMode.DEAD);
+				manager.getDrawingManager().unmarkGroup(last, coords, DrawStates.DeadStone);
 			}
 		}
 		last = null;
@@ -56,8 +56,8 @@ public class SetDead implements GameLogic
 	@Override
 	public void nextTurn() 
 	{ 
-		manager.getControler().getOptionsPanel().disactivateTeritoriesBox(false);
-		manager.setLogic(new GameStateOpponentsChoosingDead(manager));
+		manager.getController().getOptionsPanel().deactivateTerritoriesBox(false);
+		manager.setLogic(new OpponentSetDead(manager));
 	}
 
 	@Override

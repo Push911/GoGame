@@ -1,4 +1,4 @@
-package Client.Game.Logic;
+package Game.Logic;
 
 import java.awt.Point;
 

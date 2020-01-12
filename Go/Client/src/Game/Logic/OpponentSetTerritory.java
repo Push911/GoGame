@@ -1,6 +1,6 @@
-package Client.Game.Logic;
+package Game.Logic;
 
-import Client.Game.GameManager;
+import Game.GameManager;
 
 import java.awt.Point;
 
@@ -16,7 +16,7 @@ public class OpponentSetTerritory implements GameLogic
 	@Override
 	public void nextTurn() 
 	{ 
-		manager.getControler().getOptionsPanel().activateTeritoriesBox(true);
+		manager.getController().getOptionsPanel().activateTerritoriesBox(true);
 		manager.setLogic(new SetTerritory(manager));
 	}
 

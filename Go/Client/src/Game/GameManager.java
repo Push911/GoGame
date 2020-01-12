@@ -1,23 +1,24 @@
-package Client.Game;
+package Game;
 
-import Client.Game.Logic.GameLogic;
-import Client.Game.Logic.MovingLogic;
-import Client.Game.Logic.OpponentMove;
-import Client.Gui.DrawingManager;
-import Client.Gui.DrawingMode;
-import Client.Gui.GuiControler;
-import Client.Exceptions.ComponentException;
+import Exceptions.ComponentException;
+import Exceptions.WrongCoordinatesException;
+import Game.Logic.GameLogic;
+import Game.Logic.MovingLogic;
+import Game.Logic.OpponentMove;
+import Gui.DrawStates;
+import Gui.DrawingManager;
+import Gui.GuiController;
 
-import java.awt.Point;
+import java.awt.*;
 import java.util.HashSet;
 import java.util.Set;
 
 public class GameManager
 {
     GameLogic logic;
-    final GuiControler controler;
+    final GuiController controller;
     final DrawingManager drawingManager;
-    int boardSize;
+    final int boardSize;
     public final StoneType myColor;
     private GameServerTranslator translator;
     public enum Field {BLACK, WHITE, EMPTY}
@@ -27,14 +28,14 @@ public class GameManager
     private int waitingY;
    
     // Creates board, sets area EMPTY and gives player color.
-    // Checks if move is possible from Client side.
+    // Checks if move is possible from side.
     // Manages which stones should be painted or removed.
-    public GameManager(int boardSize, GuiControler controler, StoneType myColor)
+    public GameManager(int boardSize, GuiController controller, StoneType myColor)
     {
         this.boardSize = boardSize;
-        this.controler = controler;
+        this.controller = controller;
         this.myColor = myColor;
-        this.drawingManager = new DrawingManager(controler);
+        this.drawingManager = new DrawingManager(controller);
         board = new Field[boardSize][boardSize];
         
         for (int i = 0; i < boardSize; i++)
@@ -43,7 +44,7 @@ public class GameManager
         }
         
         logic = (myColor == StoneType.BLACK) ? new MovingLogic(this) : new OpponentMove(this);
-        displayMessage("Welcome to go. You play as " + myColor + ".\n");
+        displayMessage("Welcome to go. You play as " + myColor + "\n");
     }
         
     public void makeMove(int x, int y)
@@ -54,7 +55,7 @@ public class GameManager
     // Allows to show message in GUI window
     public void displayMessage(String input)
     {
-        controler.displayMessage(input);
+        controller.displayMessage(input);
     }
 
     // Checks if move is possible from client side
@@ -67,7 +68,7 @@ public class GameManager
     	}
         if (board[x][y] != Field.EMPTY) 
         {
-            displayMessage("This field is already ocuppied");
+            displayMessage("This field is already occupied");
             return false;
         }
         return true;
@@ -100,9 +101,9 @@ public class GameManager
         return logic;
     }
 
-    public GuiControler getControler()
+    public GuiController getController()
     {
-        return controler;
+        return controller;
     }
 
     public DrawingManager getDrawingManager()
@@ -116,17 +117,10 @@ public class GameManager
     }
 
     // Adds move to board panel
-    public void addMyMove()
+    public void addMyMove() throws WrongCoordinatesException
     {
-        try
-        {
-            controler.getGamePanel().getBoardPanel().addStone(myColor, waitingX, waitingY);
-            board[waitingX][waitingY] = (myColor == StoneType.BLACK) ? Field.BLACK : Field.WHITE;
-        }
-        catch (WrongCoordsException e)
-        {
-            e.printStackTrace();
-        }
+        controller.getGamePanel().getBoardPanel().addStone(myColor, waitingX, waitingY);
+        board[waitingX][waitingY] = (myColor == StoneType.BLACK) ? Field.BLACK : Field.WHITE;
     }
 
     // Saves move waiting for response from server
@@ -136,12 +130,12 @@ public class GameManager
         waitingY = y;
     }
 
-    // Displayes message of reason, why user could not put stone
+    // Displays message of reason, why user could not put stone
     public void resetMyMove(String reason)
     {
     	String explanation = "";
     	StringBuilder message = new StringBuilder();
-    	
+
     	message.append("Your move to [").append(String.valueOf(waitingX)).append(", ").append(String.valueOf(waitingY)).append("] was incorrect because ");
     	if(reason.contains("SUICIDAL"))
         {
@@ -164,21 +158,14 @@ public class GameManager
     }
 
     // Adds opponent move to user board
-    public void addOpponentsMove(Integer x, Integer y)
+    public void addOpponentsMove(Integer x, Integer y) throws WrongCoordinatesException
     {
-        try
-        {
-            controler.getGamePanel().getBoardPanel().addStone(myColor.other(), x, y);
-            board[x][y] = (myColor == StoneType.BLACK) ? Field.WHITE : Field.BLACK;
-        }
-        catch (WrongCoordsException e)
-        {
-            e.printStackTrace();
-        }
-    }    
+        controller.getGamePanel().getBoardPanel().addStone(myColor.other(), x, y);
+        board[x][y] = (myColor == StoneType.BLACK) ? Field.WHITE : Field.BLACK;
+    }
     
     // Tells translator to send information about user surrender
-    public void Surrender() throws ComponentException
+    public void surrender() throws ComponentException
     {
     	if (translator == null)
         {
@@ -198,15 +185,15 @@ public class GameManager
     {
     	for (Point point : area)
         {
-            controler.getGamePanel().getBoardPanel().removeStone(point.x, point.y);
+            controller.getGamePanel().getBoardPanel().removeStone(point.x, point.y);
             board[point.x][point.y] = Field.EMPTY;
         }
         logic.nextTurn();
     }
 
-    private boolean isAppropriate(int x, int y, DrawingMode mode)
+    private boolean isAppropriate(int x, int y, DrawStates mode)
     {
-    	if (mode.equals(DrawingMode.DEAD))
+    	if (mode.equals(DrawStates.DeadStone))
         {
             return !board[x][y].equals(Field.EMPTY);
         }
@@ -216,7 +203,7 @@ public class GameManager
         }
     }
     
-	public HashSet<Point> getField(int upperLeftX, int upperLeftY, int width, int height, DrawingMode mode)
+	public HashSet<Point> getField(int upperLeftX, int upperLeftY, int width, int height, DrawStates mode)
 	{
 		HashSet<Point> area = new HashSet<Point>();
 
@@ -233,7 +220,7 @@ public class GameManager
 		return area;
 	}
 	
-	public boolean isFieldTypeAppropriate(int x, int y, DrawingMode mode)
+	public boolean isFieldTypeAppropriate(int x, int y, DrawStates mode)
 	{
 		return isAppropriate(x, y, mode);
 	}
@@ -260,7 +247,7 @@ public class GameManager
 	public void resumeGame(StoneType color) 
 	{
 		drawingManager.removeAllSigns();
-		controler.getOptionsPanel().disactivateTeritoriesBox(true);
+		controller.getOptionsPanel().deactivateTerritoriesBox(true);
 		if (color.equals(myColor))
         {
             logic = new MovingLogic(this);
@@ -284,7 +271,7 @@ public class GameManager
 		translator.sendAcceptance();
 	}
 
-	// Counts which player won Game; send it to controler
+	// Counts which player won Game; send it to controller
 	public void manageResults(double black, double white) 
 	{
 		boolean blackWon = black > white;
@@ -297,6 +284,6 @@ public class GameManager
         {
             Win = myColor.equals(StoneType.WHITE) && !blackWon;
         }
-		controler.manageGameEnd(black, white, Win, false);
+		controller.manageGameEnd(black, white, Win, false);
 	}
 }
