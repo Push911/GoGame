@@ -2,8 +2,8 @@ package gameLogic;
 
 import gameLogic.goban.Goban;
 import gameLogic.states.*;
-import gameLogic.states.GameControllerStateBMove;
-import gameLogic.states.GameControllerStateWMove;
+//import gameLogic.states.GameControllerStateBMove;
+//import gameLogic.states.GameControllerStateWMove;
 import translators.GamePlayTranslator;
 
 import java.util.Random;

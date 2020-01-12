@@ -3,9 +3,9 @@ package gameLogic.goban;
 public class Goban {
     private final int size;
     private final Field[][] goban;
-    private final StoneGroupSet StoneGroups;
-    private Field lastCaptured = null;
-    private Field lastMove = null;
+    //private final StoneGroupSet StoneGroups;
+    //private Field lastCaptured = null;
+    //private Field lastMove = null;
     private int whiteCaptured = 0;
     private int blackCaptured = 0;
     private int whiteTerritory = 0;
@@ -20,6 +20,6 @@ public class Goban {
                 goban[i][j] = new Field(i, j, FieldType.EMPTY, this);
         }
         this.size = n;
-        StoneGroups = new StoneGroupSet();
+        //StoneGroups = new StoneGroupSet();
     }
 }
