@@ -26,4 +26,8 @@ public class Goban {
     public FieldType getFieldType(int i, int i1) {
         return null;
     }
+
+    public Field getField(int i, int i1) {
+        return null;
+    }
 }
