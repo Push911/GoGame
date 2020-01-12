@@ -1,6 +1,6 @@
 package server;
 
-import game.Game;
+import gameLogic.Game;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -50,6 +50,7 @@ public class Server implements Observer {
         }
 
         public void run() {
+            System.out.println("Starting server...");
             try {
                 Server.this.serverSocket = new ServerSocket(Server.this.port);
             } catch (IOException e) {
@@ -58,6 +59,7 @@ public class Server implements Observer {
             }
             try {
                 System.out.println("Server is running");
+                System.out.println("Waiting for players...");
                 while (this.listen) {
                     Server.this.socket = Server.this.serverSocket.accept();
                     System.out.println("Client connected");

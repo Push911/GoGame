@@ -1,8 +1,8 @@
 package server;
 
-import game.ClientMessagesTranslator;
-import game.Game;
-import game.Player;
+import translators.ClientMessagesTranslator;
+import gameLogic.Game;
+import gameLogic.Player;
 
 import java.io.BufferedReader;
 import java.io.IOException;
