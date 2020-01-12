@@ -4,8 +4,8 @@ public class Goban {
     private final int size;
     private final Field[][] goban;
     //private final StoneGroupSet StoneGroups;
-    //private Field lastCaptured = null;
-    //private Field lastMove = null;
+    private Field lastCaptured = null;
+    private Field lastMove = null;
     private int whiteCaptured = 0;
     private int blackCaptured = 0;
     private int whiteTerritory = 0;
@@ -21,5 +21,9 @@ public class Goban {
         }
         this.size = n;
         //StoneGroups = new StoneGroupSet();
+    }
+
+    public FieldType getFieldType(int i, int i1) {
+        return null;
     }
 }
