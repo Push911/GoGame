@@ -7,34 +7,27 @@ import gameLogic.Player;
 import java.awt.*;
 import java.util.HashMap;
 
-public class GameControllerStateBSuggestTerritory implements GameControllerState {
+
+public class GameControllerStateWSuggestTerritory implements GameControllerState {
 
     private final GameController gameController;
 
-    public GameControllerStateBSuggestTerritory(GameController gameController) {
+    public GameControllerStateWSuggestTerritory(GameController gameController) {
         this.gameController = gameController;
     }
 
     @Override
-    public void makeMove(Player p, int x, int y) { }
-
-    public void makeMove() { }
-
-    @Override
-    public boolean makeMove(Player player, boolean wasPassed) { return false; }
-
-    @Override
     public void sendProposal(Player player, String message) {
-        if (player == gameController.getBlack() && message.startsWith("TERRITORYSUGGESTION")) {
+        if (player == gameController.getWhite() && message.startsWith("TERRITORYSUGGESTION")) {
             gameController.getTranslator().setLastTerritorySuggestion(message);
-            gameController.getWhite().sendMessage(message);
-            gameController.setState(new GameControllerStateWSuggestTerritory(gameController));
+            gameController.getBlack().sendMessage(message);
+            gameController.setState(new GameControllerStateBSuggestTerritory(gameController));
         }
     }
 
     @Override
     public void reachAgreement(Player player) {
-        if (player == gameController.getBlack()) {
+        if (player == gameController.getWhite()) {
             HashMap<Point, Colour> territories = gameController.getTranslator().getLastTerritorySuggestion();
             if (territories != null) {
                 gameController.getGoban().setTerritories(territories);
@@ -42,5 +35,15 @@ public class GameControllerStateBSuggestTerritory implements GameControllerState
             }
         }
     }
+
+    @Override
+    public void makeMove(Player p, int x, int y) {
+    }
+
+    @Override
+    public boolean makeMove(Player player, boolean wasPassed) {
+        return false;
+    }
+
 
 }
