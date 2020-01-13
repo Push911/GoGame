@@ -1,5 +1,7 @@
 package gameLogic.goban;
 
+import exceptions.FieldOutOfGobanException;
+
 import java.util.HashSet;
 import java.util.Set;
 

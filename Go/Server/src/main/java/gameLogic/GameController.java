@@ -91,7 +91,7 @@ public class GameController extends Thread {
 
 
     public void endGame(Player p) {
-        setState(new GamePlayStateGameEnd());
+        setState(new GameControllerStateEndGame());
         translator.sendSurrender(p);
         black.setNotInGame();
         white.setNotInGame();
@@ -99,7 +99,7 @@ public class GameController extends Thread {
 
 
     public void endGame() {
-        setState(new GamePlayStateGameEnd());
+        setState(new GameControllerStateEndGame());
 
         double[] results = calculateResults();
         getTranslator().sendResults(results[0], results[1]);
