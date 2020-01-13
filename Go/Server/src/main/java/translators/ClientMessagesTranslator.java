@@ -21,19 +21,19 @@ public class ClientMessagesTranslator {
     public void processIncomingMessage(String message) {
         String response = "";
         if (message.startsWith("CONNECTION OK")) {
-            clientHandler.send("SETNAME");
+            clientHandler.send("NewPlayerNickname");
             return;
         } else if (message.startsWith("USERNAME")) {
             try {
                 if (game.addPlayer(message.replaceFirst("USERNAME ", ""), clientHandler))
-                    response = "NAMEOK";
+                    response = "NickNameIsChecked";
                 else
-                    response = "NAMETAKEN";
+                    response = "NameIsTaken";
             } catch (NameContainsSpaceException | EmptyNameException e) {
                 return;
             }
-        } else if (message.startsWith("LIST")) {
-            response = "LIST " + getListOfNotInGamePlayers();
+        } else if (message.startsWith("PlayerList")) {
+            response = "PlayerList " + getListOfNotInGamePlayers();
         } else if (message.startsWith("OPPONENT")) {
             message = message.replaceFirst("OPPONENT ", "");
             if (game.inviteOpponent(message, clientHandler.getPlayer().getName())) return;
@@ -90,11 +90,11 @@ public class ClientMessagesTranslator {
 
 
     public void sendInvitation(String player) {
-        clientHandler.send("INVITATIONFROM " + player);
+        clientHandler.send("InviteFrom " + player);
     }
 
     public void sendRefusal() {
-        clientHandler.send("DECLINED");
+        clientHandler.send("PlayerDeclined");
     }
 
 
