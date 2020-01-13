@@ -27,8 +27,8 @@ public class GameController extends Thread {
         black = firstBlack ? first : second;
         white = firstBlack ? second : first;
 
-        black.setGamePlay(this);
-        white.setGamePlay(this);
+        black.setGameController(this);
+        white.setGameController(this);
 
         translator = new GamePlayTranslator(black, white);
     }

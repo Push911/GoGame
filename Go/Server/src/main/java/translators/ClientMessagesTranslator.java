@@ -56,7 +56,7 @@ public class ClientMessagesTranslator {
                 return;
             }
         } else if (message.startsWith("SURRENDER ")) {
-            clientHandler.getPlayer().getGamePlay().endGame(clientHandler.getPlayer());
+            clientHandler.getPlayer().getGameController().endGame(clientHandler.getPlayer());
             return;
         } else if (message.startsWith("DEADSUGGESTION")) {
             clientHandler.getPlayer().sendProposal(message);
@@ -72,7 +72,7 @@ public class ClientMessagesTranslator {
             game.deletePlayer(game.getPlayerByName(message));
             return;
         } else if (message.startsWith("RESUME")) {
-            clientHandler.getPlayer().getGamePlay().resumeGame(clientHandler.getPlayer());
+            clientHandler.getPlayer().getGameController().resumeGame(clientHandler.getPlayer());
         } else response = "UNKNOWNCOMMAND";
         clientHandler.send(response);
     }

@@ -6,7 +6,7 @@ import translators.ClientMessagesTranslator;
 public class Player {
     private final ClientHandler handler;
     private final ClientMessagesTranslator translator;
-    private GameController gamePlay = null;
+    private GameController gameController = null;
     private final String name;
     private boolean inGame = false;
 
@@ -34,11 +34,11 @@ public class Player {
     }
 
     public void makeMove(int x, int y) {
-        if (gamePlay != null) gamePlay.makeMove(this, x, y);
+        if (gameController != null) gameController.makeMove(this, x, y);
     }
 
     public void passMove() {
-        if (gamePlay != null) gamePlay.passMove(this);
+        if (gameController != null) gameController.passMove(this);
     }
 
     public void sendMessage(String message) {
@@ -54,18 +54,18 @@ public class Player {
     }
 
     public void sendProposal(String message) {
-        gamePlay.sendProposal(this, message);
+        gameController.sendProposal(this, message);
     }
 
     public void acceptSuggestion() {
-        gamePlay.acceptProposal(this);
+        gameController.acceptProposal(this);
     }
 
-    public GameController getGamePlay() {
-        return gamePlay;
+    public GameController getGameController() {
+        return gameController;
     }
 
-    public void setGamePlay(GameController gamePlay) {
-        this.gamePlay = gamePlay;
+    public void setGameController(GameController gameController) {
+        this.gameController = gameController;
     }
 }

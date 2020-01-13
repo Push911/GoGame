@@ -8,9 +8,12 @@
       <sourceFolder url="file://$MODULE_DIR$/Client/src/Exceptions" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Client/src/ProgramDriver" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Server/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Server/src/main/test" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.12" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
   </component>
 </module>
